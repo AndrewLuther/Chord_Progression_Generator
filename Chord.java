@@ -18,6 +18,11 @@ public class Chord {
         }
     }
 
+    @Override
+    public String toString() {
+        return root.getName() + quality.toString();
+    }
+
 
     
 }
