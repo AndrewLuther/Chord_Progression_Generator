@@ -19,5 +19,17 @@ public class Scale {
         }
     }
 
+    public Note getNote(int noteIndex){
+        return notes.get(noteIndex);
+    }
+
+    public int getNumberOfNotes(){
+        return notes.size();
+    }
+
+    public ScaleType getScaleType(){
+        return type;
+    }
+
 
 }
