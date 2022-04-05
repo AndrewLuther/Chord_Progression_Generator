@@ -1,18 +1,18 @@
 public enum Note {
 
     
-    C("C", null),
+    C("C", "C"),
     CSHARP("C#", "Db"),
-    D("D", null),
+    D("D", "D"),
     DSHARP("D#", "Eb"),
-    E("E", null),
-    F("F", null),
+    E("E", "E"),
+    F("F", "F"),
     FSHARP("F#", "Gb"),
-    G("G", null),
+    G("G", "G"),
     GSHARP("G#", "Ab"),
-    A("A", null),
+    A("A", "A"),
     ASHARP("A#", "Bb"),
-    B("B", null);
+    B("B", "B");
 
     private final String noteName;
     private final String altName;

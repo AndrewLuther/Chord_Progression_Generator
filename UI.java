@@ -14,7 +14,7 @@ public class UI {
             String rootInput = input.nextLine();
             try {
                 Note root = readNote(rootInput);
-                //System.out.println(root.getName());
+                System.out.println(root.getAltName());
             }
             catch(Exception e) {
                 System.out.println("Invalid Input!");
@@ -29,7 +29,8 @@ public class UI {
         Note[] notes = Note.values();
         for(int i = 0; i<notes.length; i++){
             Note note = notes[i];
-            if(note.getName().equals(noteInput)|| note.getAltName().equals(noteInput))  return note;
+            System.out.println("Checking " + note.getName());
+            if(note.getName().equals(noteInput) || note.getAltName().equals(noteInput))  return note;
             else continue;
         }
         throw new Exception("Note not found");
