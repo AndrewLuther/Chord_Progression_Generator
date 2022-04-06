@@ -2,6 +2,9 @@ import java.util.Scanner;
 
 public class UI {
     String inputStr;
+    Note root;
+    ScaleType scaleType;
+    Scale scale;
 
     UI(){
         inputStr = "";
@@ -13,12 +16,12 @@ public class UI {
             System.out.println("Enter a Root:");
             String rootInput = input.nextLine();
             try {
-                Note root = readNote(rootInput);
+                root = readNote(rootInput);
                 //System.out.println(root.getAltName());
             }
             catch(Exception e) {
                 inputStr = rootInput;
-                if(rootInput.equals("exit")) return;
+                if(rootInput.equals("exit")) continue;
                 System.out.println("Invalid Input!");
                 continue;
             }
@@ -26,15 +29,25 @@ public class UI {
             System.out.println("Enter a Scale:");
             String scaleInput = input.nextLine();
             try {
-                ScaleType scale = readScale(scaleInput);
+                scaleType = readScale(scaleInput);
                 //System.out.println(root.getAltName());
             }
             catch(Exception e) {
                 inputStr = scaleInput;
-                if(scaleInput.equals("exit")) return;
+                if(scaleInput.equals("exit")) continue;
                 System.out.println("Invalid Input!");
                 continue;
             }
+
+            scale = new Scale(root, scaleType);
+
+            System.out.println("Enter Number of Chords:");
+            int numberInput = input.nextInt();
+
+            System.out.println();
+            Progression progression = new Progression(numberInput, scale);
+            progression.getProgression();
+            System.out.println(progression);
 
 
         }

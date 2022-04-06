@@ -13,8 +13,9 @@ public class Scale {
 
 
     private void initializeNotes(){
+        notes = new ArrayList<>();
         for(int interval: type.getIntervals()){
-            Note noteToAdd = Note.values()[root.getNumber() + interval]; // Add the note that is the number value of the root, plus the interval
+            Note noteToAdd = Note.values()[(root.getNumber() + interval)%12]; // Add the note that is the number value of the root, plus the interval
             notes.add(noteToAdd);
         }
     }

@@ -15,9 +15,10 @@ public class Progression {
     }
 
     public void generatePossibleChords(){
+        possibleChords = new Chord[scale.getNumberOfNotes()];
         for(int i = 0; i<scale.getNumberOfNotes(); i++){
             Chord chord = new Chord(scale.getNote(i), determineChordQuality(i+1)); // Note that i is incremented by 1 so that scaleDegree starts at 1.
-            chords[i] = chord;
+            possibleChords[i] = chord;
         }
     }
 
@@ -51,6 +52,16 @@ public class Progression {
             default:
                 return ChordQuality.MAJOR;
         }
+    }
+
+    @Override
+    public String toString(){
+        String printString = "";
+        for(Chord chord: chords){
+            printString += chord.toString();
+            printString += " ";
+        }
+        return printString;
     }
     
 }
