@@ -49,7 +49,7 @@ public class UI {
             progression.getProgression();
             System.out.println(progression);
 
-
+            break;
         }
     
     }
