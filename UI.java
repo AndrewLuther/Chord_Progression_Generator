@@ -13,7 +13,7 @@ public class UI {
     public void run(){
         Scanner input = new Scanner(System.in);
         while(!inputStr.equals("exit")){
-            System.out.println("Enter a Root:");
+            System.out.println("Enter a Root (C, C#, Db, etc):");
             String rootInput = input.nextLine();
             try {
                 root = readNote(rootInput);
@@ -26,7 +26,7 @@ public class UI {
                 continue;
             }
 
-            System.out.println("Enter a Scale:");
+            System.out.println("Enter a Scale (Major or Minor):");
             String scaleInput = input.nextLine();
             try {
                 scaleType = readScale(scaleInput);
@@ -43,13 +43,14 @@ public class UI {
 
             System.out.println("Enter Number of Chords:");
             int numberInput = input.nextInt();
+            input.nextLine(); //consume the newline that nextInt() doesn't take
 
             System.out.println();
             Progression progression = new Progression(numberInput, scale);
             progression.getProgression();
             System.out.println(progression);
-
-            break;
+            System.out.println();
+            continue;
         }
     
     }
