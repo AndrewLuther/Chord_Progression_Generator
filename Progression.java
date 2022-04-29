@@ -29,12 +29,24 @@ public class Progression {
 
     private void generateProgression(){
         Random rand = new Random();
+        Chord lastChord = possibleChords[0]; // initialize lastChord to avoid errors. If statement below should always run first though.
         for(int i = 0; i<numberOfChords; i++){
-            if(i==0) chords[i] = possibleChords[0];
+            if(i==0) {
+                chords[i] = possibleChords[0];
+                
+            }
             else {
                 int randInt = rand.nextInt(possibleChords.length);
                 chords[i] = possibleChords[randInt];
+
+                while(lastChord == chords[i]){ // make sure the chord isn't the same as the last chord
+                    randInt = rand.nextInt(possibleChords.length);
+                    chords[i] = possibleChords[randInt];
+                }
+                
             }
+            
+            lastChord = chords[i];
         }
     }
 
