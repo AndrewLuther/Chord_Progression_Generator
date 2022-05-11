@@ -45,10 +45,14 @@ public class Progression {
                 }
                 
             }
-            
+
             lastChord = chords[i];
         }
     }
+
+    //private Chord getChord(){
+
+    //}
 
     private ChordQuality determineChordQuality(int scaleDegree){
         ScaleType type = scale.getScaleType();
